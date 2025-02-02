@@ -1,0 +1,30 @@
+#pragma once
+#include "Level/LevelController.h"
+#include "Level/LevelNumber.h"
+
+namespace Level
+{
+	class LevelController;
+
+	class LevelService
+	{
+	private:
+		LevelController* level_controller;
+		LevelNumber current_level;
+
+		void createLevelController();
+		void destroy();
+
+
+	public:
+		LevelService();
+		~LevelService();
+
+		void initialize();
+		void render();
+		void update();
+
+		void createLevel(LevelNumber level_to_load);
+
+	};
+}
