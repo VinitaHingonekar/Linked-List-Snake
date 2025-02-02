@@ -4,6 +4,8 @@
 
 namespace Level
 {
+	class LevelController;
+
 	class LevelService
 	{
 	private:
