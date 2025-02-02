@@ -18,6 +18,7 @@ namespace Global
 		sound_service = nullptr;
 		ui_service = nullptr;
 		time_service = nullptr;
+		level_service = nullptr;
 
 		createServices();
 	}
