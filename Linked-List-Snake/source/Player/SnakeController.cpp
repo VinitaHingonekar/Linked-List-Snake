@@ -69,6 +69,11 @@ namespace Player
 
 	}
 
+	void SnakeController::spawnSnake()
+	{
+
+	}
+
 	void SnakeController::respawnSnake()
 	{
 
