@@ -28,5 +28,8 @@ namespace Level
 
 		void spawnPlayer();
 
+		float getCellWidth();
+		float getCellHeight();
+
 	};
 }

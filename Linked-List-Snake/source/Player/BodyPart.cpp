@@ -5,14 +5,14 @@
 
 namespace Player
 {
-	using namespace UI;
 	using namespace Global;
 	using namespace Level;
+	using namespace UI::UIElement;
 
 	BodyPart::BodyPart()
 	{
-		createBodyPartImage();
 		grid_position = sf::Vector2i(0, 0);
+		createBodyPartImage();
 	}
 
 	BodyPart::~BodyPart()
@@ -30,16 +30,9 @@ namespace Player
 		initializeBodyPartImage();
 	}
 
-	//void BodyPart::update();
-
-	void BodyPart::render()
-	{
-		bodypart_image->render();
-	}
-
 	void BodyPart::createBodyPartImage()
 	{
-		bodypart_image = new UIElement::ImageView();
+		bodypart_image = new ImageView();
 	}
 
 	void BodyPart::initializeBodyPartImage()
@@ -48,12 +41,24 @@ namespace Player
 		bodypart_image->setOriginAtCentre();
 	}
 
+	void BodyPart::updatePosition()
+	{
+		bodypart_image->setPosition(getBodyPartScreenPosition());
+		bodypart_image->setRotation(getRotationAngle());
+		bodypart_image->update();
+	}
+
 	sf::Vector2f BodyPart::getBodyPartScreenPosition()
 	{
 		float x_screen_position = LevelView::border_offset_left + (grid_position.x * bodypart_width) + (bodypart_width / 2);
 		float y_screen_position = LevelView::border_offset_top + (grid_position.y * bodypart_height) + (bodypart_height / 2);
 
 		return sf::Vector2f(x_screen_position, y_screen_position);
+	}
+
+	void BodyPart::render()
+	{
+		bodypart_image->render();
 	}
 
 	float BodyPart::getRotationAngle()
@@ -70,14 +75,6 @@ namespace Player
 			return 180.f;
 		}
 	}
-
-	void BodyPart::updatePosition()
-	{
-		bodypart_image->setPosition(getBodyPartScreenPosition());
-		bodypart_image->setRotation(getRotationAngle());
-		bodypart_image->update();
-	}
-
 
 	sf::Vector2i BodyPart::getNextPosition()
 	{
