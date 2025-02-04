@@ -82,4 +82,28 @@ namespace LinkedList
 
 		return default_position;
 	}
+
+	void SingleLinkedList::updateNodeDirection(Direction direction_to_set)
+	{
+		Node* curr_node = head_node;
+
+		while (curr_node != nullptr)
+		{
+			Direction prev_direction = curr_node->body_part.getDirection();
+			curr_node->body_part.setDirection(direction_to_set);
+			direction_to_set = prev_direction;
+			curr_node = curr_node->next;
+		}
+	}
+
+	void SingleLinkedList::updateNodePosition()
+	{
+		Node* curr_node = head_node;
+
+		while (curr_node != nullptr)
+		{
+			curr_node->body_part.updatePosition();
+			curr_node = curr_node->next;
+		}
+	}
 }
