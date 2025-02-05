@@ -12,6 +12,7 @@ namespace Global
 	using namespace Main;
 	using namespace Player;
 	using namespace Element;
+	using namespace Food;
 
 	ServiceLocator::ServiceLocator()
 	{
@@ -21,6 +22,7 @@ namespace Global
 		level_service = nullptr;
 		element_service = nullptr;
 		player_service = nullptr;
+		food_service = nullptr;
 		ui_service = nullptr;
 		time_service = nullptr;
 
@@ -37,6 +39,7 @@ namespace Global
 		level_service = new LevelService();
 		element_service = new ElementService();
 		player_service = new PlayerService();
+		food_service = new FoodService();
 		ui_service = new UIService();
 		time_service = new TimeService();
 	}
@@ -49,6 +52,7 @@ namespace Global
 		level_service->initialize();
 		element_service->initialize();
 		player_service->initialize();
+		food_service->initialize();
 		ui_service->initialize();
 		time_service->initialize();
 	}
@@ -63,6 +67,7 @@ namespace Global
 			level_service->update();
 			element_service->update();
 			player_service->update();
+			food_service->update();
 		}
 
 		ui_service->update();
@@ -77,6 +82,7 @@ namespace Global
 			level_service->render();
 			element_service->render();
 			player_service->render();
+			food_service->render();
 		}
 		ui_service->render();
 	}
@@ -84,6 +90,7 @@ namespace Global
 	void ServiceLocator::clearAllServices()
 	{
 		delete(ui_service);
+		delete(food_service);
 		delete(player_service);
 		delete(element_service);
 		delete(level_service);
@@ -114,6 +121,8 @@ namespace Global
 	Player::PlayerService* ServiceLocator::getPlayerService() { return player_service; }
 
 	Element::ElementService* ServiceLocator::getElementService() { return element_service; }
+
+	Food::FoodService* ServiceLocator::getFoodService() { return food_service; }
 
 	void ServiceLocator::deleteServiceLocator() { delete(this); }
 }
