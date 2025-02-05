@@ -2,10 +2,12 @@
 #include <SFML/System/Vector2.hpp>
 #include "Direction.h"
 #include "LinkedList/SingleLinkedList.h"
+#include "Food/FoodType.h"
 
 namespace Player
 {
 	using namespace LinkedList;
+	using namespace Food;
 
 	enum class SnakeState
 	{
@@ -47,6 +49,8 @@ namespace Player
 		void processElementsCollision();
 		void processFoodCollision();
 
+		void OnFoodCollected(FoodType food_type);
+
 		void destroy();
 
 	public:
@@ -67,6 +71,7 @@ namespace Player
 
 		LinkedList::SingleLinkedList* single_linked_list;
 		void createLinkedList();
+
 
 		void delayedUpdate();
 	};
