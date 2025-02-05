@@ -1,9 +1,13 @@
-#include "../../include/Level/LevelService.h" 
+#include "Level/LevelService.h"
+#include "Level/LevelController.h"
 #include "Global/ServiceLocator.h"
+#include "Element/ElementService.h"
+#include "Level/LevelModel.h"
 
 namespace Level
 {
 	using namespace Global;
+	using namespace Element;
 
 	LevelService::LevelService()
 	{
@@ -27,24 +31,21 @@ namespace Level
 		level_controller->initialize();
 	}
 
-	void LevelService::render()
-	{
-		level_controller->render();
-	}
-
 	void LevelService::update()
 	{
 		level_controller->update();
 	}
 
-	void LevelService::destroy()
+	void LevelService::render()
 	{
-		delete(level_controller);
+		level_controller->render();
 	}
 
-	void LevelService::spawnPlayer()
+	void LevelService::createLevel(LevelNumber level_to_load)
 	{
-		ServiceLocator::getInstance()->getPlayerService()->spawnPlayer();
+		current_level = level_to_load;
+		spawnLevelElements(level_to_load);
+		spawnPlayer();
 	}
 
 	float LevelService::getCellWidth()
@@ -57,11 +58,9 @@ namespace Level
 		return level_controller->getCellHeight();
 	}
 
-	void LevelService::createLevel(LevelNumber level_to_load)
+	void LevelService::spawnPlayer()
 	{
-		current_level = level_to_load;
-		spawnLevelElements(level_to_load);
-		spawnPlayer();
+		ServiceLocator::getInstance()->getPlayerService()->spawnPlayer();
 	}
 
 	void LevelService::spawnLevelElements(LevelNumber level_to_load)
@@ -69,8 +68,12 @@ namespace Level
 		float cell_width = level_controller->getCellWidth();
 		float cell_height = level_controller->getCellHeight();
 
-		//std::vector<Element::ElementData> element_data_list = level_controller->getElementDataList((int)level_to_load);
+		std::vector<ElementData> element_data_list = level_controller->getElementDataList((int)level_to_load);
+		ServiceLocator::getInstance()->getElementService()->spawnElements(element_data_list, cell_width, cell_height);
+	}
 
-		//ServiceLocator::getInstance()->getElementService()->spawnElements(element_data_list, cell_width, cell_height);
+	void LevelService::destroy()
+	{
+		delete level_controller;
 	}
 }
