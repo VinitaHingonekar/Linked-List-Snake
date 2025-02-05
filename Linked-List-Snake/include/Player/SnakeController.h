@@ -59,6 +59,8 @@ namespace Player
 		void setSnakeState(SnakeState state);
 		SnakeState getSnakeState();
 
+		std::vector<sf::Vector2i> getCurrentSnakePositionList();
+
 		LinkedList::SingleLinkedList* single_linked_list;
 		void createLinkedList();
 
