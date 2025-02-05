@@ -60,10 +60,11 @@ namespace Player
 			elapsed_duration = 0.f;
 			updateSnakeDirection();
 			processSnakeCollision();
-			if (current_snake_state == SnakeState::ALIVE)
+			if (current_snake_state != SnakeState::DEAD)
 			{
 				moveSnake();
 			}
+			current_input_state = InputState::WAITING;
 		}
 	}
 
@@ -74,6 +75,9 @@ namespace Player
 
 	void SnakeController::processPlayerInput()
 	{
+		if (current_input_state == InputState::PROCESSING)
+			return;
+
 		EventService* event_service = ServiceLocator::getInstance()->getEventService();
 
 		if (event_service->pressedUpArrowKey() && current_snake_direction != Direction::DOWN)
@@ -127,7 +131,9 @@ namespace Player
 		current_snake_state = SnakeState::ALIVE;
 		current_snake_direction = default_direction;
 		elapsed_duration = 0.f;
-		//restart_counter = 0.f;
+		restart_counter = 0.f;
+
+		current_input_state = InputState::WAITING;
 	}
 
 	void SnakeController::spawnSnake()
