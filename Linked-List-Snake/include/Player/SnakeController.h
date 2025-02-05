@@ -43,6 +43,10 @@ namespace Player
 		void handleRestart();
 		void reset();
 
+		void processBodyCollision();
+		void processElementsCollision();
+		void processFoodCollision();
+
 		void destroy();
 
 	public:
