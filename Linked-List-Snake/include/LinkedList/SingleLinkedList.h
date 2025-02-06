@@ -58,6 +58,11 @@ namespace LinkedList
 		int findMiddleNode();
 		void insertNodeAtMiddle();
 
+		void shiftNodesAfterRemoval(Node* cur_node);
+
+		void removeNodeAt(int index);
+		void removeNodeAtIndex(int index);
+		void removeNodeAtMiddle();
 
 	};
 }
