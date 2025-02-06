@@ -135,6 +135,7 @@ namespace Player
 
 	void BodyPart::setDirection(Direction direction)
 	{
+		previous_direction = this->direction;
 		this->direction = direction;
 	}
 
@@ -151,6 +152,11 @@ namespace Player
 	sf::Vector2i BodyPart::getPosition()
 	{
 		return grid_position;
+	}
+
+	Direction BodyPart::getPreviousDirection()
+	{
+		return previous_direction;
 	}
 
 	void BodyPart::destroy()
