@@ -56,6 +56,7 @@ namespace LinkedList
 		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
 
 		int findMiddleNode();
+		Node* findNodeAtIndex(int index);
 		void insertNodeAtMiddle();
 
 		void shiftNodesAfterRemoval(Node* cur_node);
@@ -63,7 +64,8 @@ namespace LinkedList
 		void removeNodeAt(int index);
 		void removeNodeAtIndex(int index);
 		void removeNodeAtMiddle();
-		void removeNodeAtTail()
+		void removeNodeAtTail();
 
+		void removeHalfNodes();
 	};
 }
