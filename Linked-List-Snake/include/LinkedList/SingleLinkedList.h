@@ -51,6 +51,9 @@ namespace LinkedList
 
 		void insertNodeAtHead();
 		void insertNodeAtTail();
+		void insertNodeAtIndex(int index);
+
+		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
 
 
 	};
