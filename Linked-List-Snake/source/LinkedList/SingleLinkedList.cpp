@@ -37,27 +37,7 @@ namespace LinkedList
 		return new Node();
 	}
 
-	void SingleLinkedList::insertNodeAtTail()
-	{
-		Node* new_node = createNode();
-		Node* curr_node = head_node;
 
-		if (curr_node == nullptr)
-		{
-			head_node = new_node;
-			new_node->body_part.initialize(node_width, node_height, default_position, default_direction);
-			return;
-		}
-
-		while (curr_node->next != nullptr)
-		{
-			curr_node = curr_node->next;
-		}
-
-		curr_node->next = new_node;
-		new_node->body_part.initialize(node_width, node_height, getNewNodePosition(curr_node, Operation::TAIL), curr_node->body_part.getDirection());
-
-	}
 
 	bool SingleLinkedList::processNodeCollision()
 	{
@@ -184,5 +164,29 @@ namespace LinkedList
 		new_node->next = head_node;
 		head_node = new_node;	
 	}
+
+	void SingleLinkedList::insertNodeAtTail()
+	{
+		linked_list_size++;
+		Node* new_node = createNode();
+		Node* cur_node = head_node;
+
+		if (cur_node == nullptr)
+		{
+			head_node = new_node;
+			initializeNode(new_node, nullptr, Operation::TAIL);
+			return;
+		}
+
+		while (cur_node->next != nullptr)
+		{
+			cur_node = cur_node->next;
+		}
+
+		cur_node->next = new_node;
+		initializeNode(new_node, cur_node, Operation::TAIL);
+	}
+
+
 
 }
