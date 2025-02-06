@@ -114,6 +114,12 @@
     <ClCompile Include="source\Food\FoodService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="include\UI\GameplayUI\GameplayUIController.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\GameplayUI\GameplayUICotroller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Main\GameService.h">
