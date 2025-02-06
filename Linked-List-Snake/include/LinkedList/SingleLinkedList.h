@@ -25,6 +25,8 @@ namespace LinkedList
 
 		Node* createNode();
 
+		int linked_list_size;
+
 	public:
 		SingleLinkedList();
 		~SingleLinkedList();
@@ -47,5 +49,7 @@ namespace LinkedList
 		sf::Vector2i getNewNodePosition(Node* reference_node, Operation operation);
 
 		void initializeNode(Node* new_node, Node* reference_node, Operation operation);
+
+		void insertNodeAtHead();
 	};
 }
