@@ -35,6 +35,7 @@ namespace Player
 		void updatePosition();
 
 		sf::Vector2i getNextPosition();
+		sf::Vector2i getPrevPosition();
 
 		sf::Vector2i getNextPositionDown();
 		sf::Vector2i getNextPositionUp();

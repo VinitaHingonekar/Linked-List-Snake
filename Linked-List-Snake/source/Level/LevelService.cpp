@@ -8,6 +8,7 @@ namespace Level
 {
 	using namespace Global;
 	using namespace Element;
+	using namespace Food;
 
 	LevelService::LevelService()
 	{
