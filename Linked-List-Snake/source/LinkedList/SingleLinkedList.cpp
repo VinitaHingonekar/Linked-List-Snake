@@ -236,4 +236,33 @@ namespace LinkedList
 
 		initializeNode(cur_node, prev_node, Operation::TAIL);
 	}
+
+	int SingleLinkedList::findMiddleNode()
+	{
+		Node* slow = head_node;
+		Node* fast = head_node;
+
+		int mid_index = 0;
+
+		while (fast != nullptr && fast->next != nullptr)
+		{
+			slow = slow->next;
+			fast = fast->next->next;
+			mid_index++;
+		}
+
+		return mid_index;
+	}
+
+	void SingleLinkedList::insertNodeAtMiddle()
+	{
+		if (head_node == nullptr)
+		{
+			insertNodeAtHead();
+			return;
+		}
+
+		int mid_index = findMiddleNode();
+		insertNodeAtIndex(mid_index);
+	}
 }
