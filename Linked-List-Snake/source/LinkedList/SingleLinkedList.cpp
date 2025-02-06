@@ -332,5 +332,28 @@ namespace LinkedList
 		removeNodeAt(midIndex);
 	}
 
+	void SingleLinkedList::removeNodeAtTail()
+	{
+		if (head_node == nullptr)
+			return;
+		
+		Node* curr_node = head_node;
+
+		linked_list_size--;
+
+		if (curr_node->next == nullptr)
+		{
+			removeNodeAtHead();
+			return;
+		}
+
+		while (curr_node->next->next != nullptr)
+		{
+			curr_node = curr_node->next;
+		}
+
+		delete(curr_node->next);
+		curr_node->next == nullptr;		
+	}
 
 }

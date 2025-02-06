@@ -63,6 +63,7 @@ namespace LinkedList
 		void removeNodeAt(int index);
 		void removeNodeAtIndex(int index);
 		void removeNodeAtMiddle();
+		void removeNodeAtTail()
 
 	};
 }
