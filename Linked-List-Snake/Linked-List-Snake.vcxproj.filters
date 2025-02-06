@@ -93,7 +93,7 @@
     <ClCompile Include="source\Player\SnakeController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\LinkedList\Node.h">
+    <ClCompile Include="include\LinkedListLib\Node.h">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\Player\BodyPart.cpp">
@@ -212,7 +212,7 @@
     <ClInclude Include="include\Player\BodyPart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\LinkedList\SingleLinkedList.h">
+    <ClInclude Include="include\LinkedListLib\SingleLinkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Element\ElementData.h">
@@ -231,6 +231,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Food\FoodService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LinkedListLib\SingleLinked\SingleNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LinkedListLib\DoubleLinked\DoubleNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

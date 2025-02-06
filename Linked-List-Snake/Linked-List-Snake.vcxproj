@@ -133,7 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="include\LinkedList\Node.h" />
+    <ClCompile Include="include\LinkedListLib\Node.h" />
     <ClCompile Include="include\UI\GameplayUI\GameplayUIController.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="source\Element\ElementService.cpp" />
@@ -182,7 +182,9 @@
     <ClInclude Include="include\Level\LevelNumber.h" />
     <ClInclude Include="include\Level\LevelService.h" />
     <ClInclude Include="include\Level\LevelView.h" />
-    <ClInclude Include="include\LinkedList\SingleLinkedList.h" />
+    <ClInclude Include="include\LinkedListLib\DoubleLinked\DoubleNode.h" />
+    <ClInclude Include="include\LinkedListLib\SingleLinkedList.h" />
+    <ClInclude Include="include\LinkedListLib\SingleLinked\SingleNode.h" />
     <ClInclude Include="include\Player\BodyPart.h" />
     <ClInclude Include="include\Player\Direction.h" />
     <ClInclude Include="include\Player\PlayerService.h" />
