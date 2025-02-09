@@ -98,13 +98,13 @@ namespace Player
 
 		//LinkedList::SingleLinkedList* single_linked_list;
 		LinkedListLib::LinkedList* linked_list;
-		void createLinkedList();
 
 		void delayedUpdate();
 
 		int getPlayerScore();
 		TimeComplexity getTimeComplexity();
 		LinkedListOperations getLastOperation();
+		bool isSnakeDead();
 
 	};
 }

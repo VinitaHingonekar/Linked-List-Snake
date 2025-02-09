@@ -122,6 +122,8 @@ namespace Food
 
 	void FoodService::handleFoodSpawning()
 	{
+		if (ServiceLocator::getInstance()->getPlayerService()->isPlayerDead()) return;
+
 		if (elapsed_duration >= spawn_duration)
 		{
 			destroyFood();
@@ -129,6 +131,7 @@ namespace Food
 			spawnFood();
 		}
 	}
+
 
 	bool FoodService::processFoodCollision(LinkedListLib::Node* head_node, FoodType& out_food_type)
 	{

@@ -63,6 +63,11 @@ namespace Player
 		return snake_controller->getTimeComplexity();
 	}
 
+	bool PlayerService::isPlayerDead()
+	{
+		return snake_controller->isSnakeDead();
+	}
+
 	void PlayerService::destroy()
 	{
 		delete (snake_controller);
