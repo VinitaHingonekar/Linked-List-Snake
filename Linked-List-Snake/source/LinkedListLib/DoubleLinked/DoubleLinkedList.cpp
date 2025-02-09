@@ -123,6 +123,22 @@ namespace LinkedListLib
 
 		}
 
+		void DoubleLinkedList::removeNodeAtHead() 
+		{
+			linked_list_size--;
+
+			Node* cur_node = head_node;
+			head_node = head_node->next;
+
+			if (head_node != nullptr)
+			{
+				static_cast<DoubleNode*>(head_node)->previous = nullptr;
+			}
+
+			cur_node->next = nullptr;
+			delete cur_node;
+		}
+
 		void DoubleLinkedList::removeNodeAtIndex(int index)
 		{
 
