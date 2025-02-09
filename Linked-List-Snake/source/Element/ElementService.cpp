@@ -4,7 +4,7 @@
 #include "Level/LevelController.h"
 #include "Element/Obstacle.h"
 #include "Element/ElementData.h"
-#include "LinkedList/SingleLinkedList.h"
+#include "LinkedListLib/SingleLinked/SingleLinkedList.h"
 
 namespace Element
 {
@@ -63,7 +63,7 @@ namespace Element
 		return elements_position_list;
 	}
 
-	bool ElementService::processElementsCollision(LinkedList::Node* head_node)
+	bool ElementService::processElementsCollision(LinkedListLib::Node* head_node)
 	{
 		for (int i = 0; i < obstacle_list.size(); i++)
 		{

@@ -2,7 +2,7 @@
 
 #include "Level/LevelService.h"
 #include "Element/ElementData.h"
-#include "Level/LevelNumber.h"
+#include "Level/LevelConfig.h"
 
 namespace Level
 {

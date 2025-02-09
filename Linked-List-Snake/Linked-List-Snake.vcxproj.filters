@@ -123,13 +123,13 @@
     <ClCompile Include="source\LinkedListLib\DoubleLinked\DoubleLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\LinkedListLib\LinkedList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\LinkedListLib\SingleLinked\SingleLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\UI\LinkedListUI\LinkedListSelectionUIController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\LinkedListLib\LinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
