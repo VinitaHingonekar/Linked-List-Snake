@@ -89,15 +89,12 @@ namespace LinkedListLib
         {
             if (head_node == nullptr)
             {
-                // If the list is empty, insert at the head.
                 insertNodeAtHead();
                 return;
             }
 
-            // Use the existing function to find the middle index
             int midIndex = findMiddleNode();
 
-            // Use the existing function to insert the node at the found index
             insertNodeAtIndex(midIndex);
 
         }
