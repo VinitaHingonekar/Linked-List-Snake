@@ -232,6 +232,16 @@ namespace LinkedListLib
 			removeNodeAt(midIndex);
 		}
 
+		void DoubleLinkedList::removeAllNodes()
+		{
+			if (head_node == nullptr) return;
+
+			while (head_node != nullptr)
+			{
+				removeNodeAtHead();
+			}
+		}
+
 	}
 }
 
